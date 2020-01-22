@@ -82,60 +82,69 @@ namespace CodePractice
                 ReCalculateDown(heap, 0, i + 1, freq);
             }
 
-                //none linq way, has to use list
-                //List<string> tq = new List<string>();
-                //foreach (KeyValuePair<string, int[]> item in freq)
-                //{
-                //    if (item.Value[0] > 0)
-                //        tq.Add(item.Key);
-                //}
+            //if return is array
+            string[] res = new string[topToys];
+            for (int i = topToys - 1; i >= 0; i--)
+            {
+                res[i] = heap[0];
+                heap[0] = heap[i];
+                ReCalculateDown(heap, 0, i + 1, freq);
+            }
+
+            //none linq way, has to use list
+            //List<string> tq = new List<string>();
+            //foreach (KeyValuePair<string, int[]> item in freq)
+            //{
+            //    if (item.Value[0] > 0)
+            //        tq.Add(item.Key);
+            //}
 
 
-                // if topToys > total number of toys, update to the size of dictionary which has freq > 0
-                //if (topToys > numToys)
-                //{
-                //    topToys = freq.Count(kv => kv.Value[0] > 0);
+            // if topToys > total number of toys, update to the size of dictionary which has freq > 0
+            //if (topToys > numToys)
+            //{
+            //    topToys = freq.Count(kv => kv.Value[0] > 0);
 
-                //    // a for loop
-                //    int count = 0;
-                //    foreach(KeyValuePair<string, int[]> item in freq)
-                //    {
-                //        if (item.Value[0] > 0)
-                //            ++count;
-                //    }
-                //}
+            //    // a for loop
+            //    int count = 0;
+            //    foreach(KeyValuePair<string, int[]> item in freq)
+            //    {
+            //        if (item.Value[0] > 0)
+            //            ++count;
+            //    }
+            //}
 
-                // build min-heap to get top frequent N toys
+            // build min-heap to get top frequent N toys
 
-                //            PriorityQueue<string> pq = new PriorityQueue<>((t1, t2)-> {
-                //      if (freq.get(t1)[0] != freq.get(t2)[0])
-                //            {
-                //                return freq.get(t1)[0] - freq.get(t2)[0];
-                //            }
+            //            PriorityQueue<string> pq = new PriorityQueue<>((t1, t2)-> {
+            //      if (freq.get(t1)[0] != freq.get(t2)[0])
+            //            {
+            //                return freq.get(t1)[0] - freq.get(t2)[0];
+            //            }
 
-                //            if (freq.get(t1)[1] != freq.get(t2)[1])
-                //            {
-                //                return freq.get(t1)[1] - freq.get(t2)[1];
-                //            }
+            //            if (freq.get(t1)[1] != freq.get(t2)[1])
+            //            {
+            //                return freq.get(t1)[1] - freq.get(t2)[1];
+            //            }
 
-                //            return t2.compareTo(t1);
-                //        });
+            //            return t2.compareTo(t1);
+            //        });
 
-                //    if (topToys > numToys) {
-                //      for (string toy : freq.keySet()) {
-                //        if (freq.get(toy)[0] > 0) {
-                //          pq.add(toy);
-                //        }
-                //}
-                //    } else {
-                //      for (string toy : toys) {
-                //        pq.add(toy);
+            //    if (topToys > numToys) {
+            //      for (string toy : freq.keySet()) {
+            //        if (freq.get(toy)[0] > 0) {
+            //          pq.add(toy);
+            //        }
+            //}
+            //    } else {
+            //      for (string toy : toys) {
+            //        pq.add(toy);
 
-                //        if (pq.size() > topToys) {
-                //          pq.poll();
-                //        }
-                //      }
-                //    }
+            //        if (pq.size() > topToys) {
+            //          pq.poll();
+            //        }
+            //      }
+            //    }
 
 
             //while (!pq.isEmpty()) {

@@ -58,7 +58,10 @@ namespace CodePractice
         public void RecalculateUp(int[][] res, int index)
         {
             // has parent node and parent value < child value
-            while ((index - 1)/2 >= 0 && Dist(res[(index - 1)/2]) < Dist(res[index])) 
+            // there is a bug here, index = 0, -1/2 =0, will go down.
+            // doesnt affect result, just one more calculation.
+            // change from (index - 1) / 2 >=0 to index > 0
+            while (index > 0 && Dist(res[(index - 1) / 2]) < Dist(res[index]))
             {
                 Swap(res, index, (index - 1) / 2);
                 index = (index - 1) / 2;
