@@ -43,9 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CriticalConnections.cs" />
+    <Compile Include="CriticalConnectionsAllCasePassed.cs" />
+    <Compile Include="CriticialRouters.cs" />
     <Compile Include="KClosestPoints.cs" />
     <Compile Include="MinHeap.cs" />
+    <Compile Include="MinStepsTreasureIslands.cs" />
     <Compile Include="NumberOfClusters.cs" />
+    <Compile Include="ProductSuggestionPrefer.cs" />
+    <Compile Include="ProductSuggetion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RottingOrange.cs" />

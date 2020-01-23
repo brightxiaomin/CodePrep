@@ -69,6 +69,8 @@ namespace CodePractice
             return count_fresh == 0 ? time - 1 : -1;
         }
 
+
+        //only '1' and '0'
         public int ServerProblem(int rows, int cols, int[][] grid)
         {
             //edge case
