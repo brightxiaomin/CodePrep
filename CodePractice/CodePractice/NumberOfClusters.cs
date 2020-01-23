@@ -8,6 +8,7 @@ namespace CodePractice
 {
     public class NumberOfClusters
     {
+        // add two glocal variables so we dont need to pass to every recursion
         private int n;
         private int m;
         public int NumIslands(char[][] grid)
@@ -35,7 +36,7 @@ namespace CodePractice
         {
             if (i < 0 || j < 0 || i >= n || j >= m || grid[i][j] != '1') return;
 
-            grid[i][j] = '0';
+            grid[i][j] = '0'; // mark as vistied 
             DFSMarking(grid, i + 1, j);
             DFSMarking(grid, i - 1, j);
             DFSMarking(grid, i, j + 1);

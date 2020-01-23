@@ -90,20 +90,17 @@ namespace CodePractice
             int count_old = 0;
             int days = 0;
 
-            // two for loop
+            // count the out of date servers and also add updated servers to the queue
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
                 {
                     if (grid[i][j] == 1)
-                        queue.Enqueue(new int[] { i, j }); // add index of rotten orange to queue
+                        queue.Enqueue(new int[] { i, j }); // add index of updated server to queue
                     else if (grid[i][j] == 0)
                         count_old++;
                 }
             }
-
-            //if no fresh orange
-            //if (count_fresh == 0) return 0;
 
             //BFS
             while (queue.Count > 0 && count_old > 0)
@@ -121,7 +118,7 @@ namespace CodePractice
                         int c = point[1] + dr[1];
                         if (r < 0 || c < 0 || r >= rows || c >= cols || grid[r][c] == 1)
                             continue;
-                        grid[r][c] = 1;
+                        grid[r][c] = 1; // mark as updated
                         queue.Enqueue(new int[] { r, c });
                         count_old--;
                     }

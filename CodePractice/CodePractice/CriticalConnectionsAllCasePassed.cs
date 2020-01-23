@@ -10,7 +10,8 @@ namespace CodePractice
     {
         List<List<int>> list;
         Dictionary<int, bool> visited;
-        List<List<int>> GetCriticalConnections(int numOfServers, int numOfConnections, List<List<int>> connections)
+
+        public List<List<int>> GetCriticalConnections(int numOfServers, int numOfConnections, List<List<int>> connections)
         {
             Dictionary<int, HashSet<int>> adj = new Dictionary<int, HashSet<int>>();
             foreach (List<int> connection in connections)
