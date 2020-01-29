@@ -10,11 +10,17 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            int[][] test = new int[4][];
-            test[0] = new int[] { 1 };
-            test[1] = new int[] { 2 };
-            test[2] = new int[] { 1 };
-            test[3] = new int[] { 1 };
+            //int[][] test = new int[4][];
+            //test[0] = new int[] { 1 };
+            //test[1] = new int[] { 2 };
+            //test[2] = new int[] { 1 };
+            //test[3] = new int[] { 1 };
+
+
+            //var test3 = Console.ReadLine();
+
+            //string[] ad = test3.Split(',');
+
 
 
             //KClosestPoints solu = new KClosestPoints();
@@ -47,11 +53,14 @@ namespace CodePractice
             //char c = 'c';
             //int s = c - 'a';
 
-            List<string> tt = new List<string> { "mouse", "hello", "easy" };
+            //s List<string> tt = new List<string> { "mouse", "hello", "easy" };
 
-            tt.Sort();
+            //// tt.Sort();
 
-            tt.RemoveAt(tt.Count - 1);
+            // tt.RemoveAt(tt.Count - 1);
+
+            List<string> input = new List<string>() { "hot", "dot", "dog", "lot", "log", "cog" };
+            int res = new WordLadder().LadderLength("hit", "cog", input);
 
             Console.WriteLine("Hello World!");
         }

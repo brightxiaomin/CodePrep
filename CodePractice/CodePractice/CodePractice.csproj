@@ -58,6 +58,7 @@
     <Compile Include="TopNToys.cs" />
     <Compile Include="TopNToysClean.cs" />
     <Compile Include="TwoSumAll.cs" />
+    <Compile Include="WordLadder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
