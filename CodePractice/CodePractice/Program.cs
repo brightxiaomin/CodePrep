@@ -10,11 +10,12 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            int[][] test = new int[4][];
-            test[0] = new int[] { 1 };
-            test[1] = new int[] { 2 };
-            test[2] = new int[] { 1 };
-            test[3] = new int[] { 1 };
+            #region old test
+            //int[][] test = new int[4][];
+            //test[0] = new int[] { 1 };
+            //test[1] = new int[] { 2 };
+            //test[2] = new int[] { 1 };
+            //test[3] = new int[] { 1 };
 
 
             //KClosestPoints solu = new KClosestPoints();
@@ -47,13 +48,17 @@ namespace CodePractice
             //char c = 'c';
             //int s = c - 'a';
 
-            List<string> tt = new List<string> { "mouse", "hello", "easy" };
+            //List<string> tt = new List<string> { "mouse", "hello", "easy" };
 
-            tt.Sort();
+            //tt.Sort();
 
-            tt.RemoveAt(tt.Count - 1);
+            //tt.RemoveAt(tt.Count - 1);
+            #endregion
 
+            EightQueen eightQueen = new EightQueen();
+            eightQueen.CalculateQueen(0);
             Console.WriteLine("Hello World!");
+            Console.ReadLine();
         }
     }
 }
