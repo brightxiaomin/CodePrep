@@ -46,6 +46,7 @@
     <Compile Include="CriticalConnections.cs" />
     <Compile Include="CriticalConnectionsAllCasePassed.cs" />
     <Compile Include="CriticialRouters.cs" />
+    <Compile Include="EightQueen.cs" />
     <Compile Include="KClosestPoints.cs" />
     <Compile Include="MinHeap.cs" />
     <Compile Include="MinStepsTreasureIslands.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="ProductSuggetion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RockPaperScissor.cs" />
     <Compile Include="RottingOrange.cs" />
     <Compile Include="TopNToys.cs" />
     <Compile Include="TopNToysClean.cs" />
