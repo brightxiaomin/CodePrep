@@ -51,6 +51,7 @@
     <Compile Include="MinHeap.cs" />
     <Compile Include="MinStepsTreasureIslands.cs" />
     <Compile Include="NumberOfClusters.cs" />
+    <Compile Include="Billboards.cs" />
     <Compile Include="ProductSuggestionPrefer.cs" />
     <Compile Include="ProductSuggetion.cs" />
     <Compile Include="Program.cs" />

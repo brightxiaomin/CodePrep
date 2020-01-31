@@ -10,6 +10,7 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
+            #region old test
             //int[][] test = new int[4][];
             //test[0] = new int[] { 1 };
             //test[1] = new int[] { 2 };
