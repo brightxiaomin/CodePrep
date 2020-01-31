@@ -61,8 +61,12 @@ namespace CodePractice
             //tt.RemoveAt(tt.Count - 1);
             #endregion
 
-            EightQueen eightQueen = new EightQueen();
-            eightQueen.CalculateQueen(0);
+            //EightQueen eightQueen = new EightQueen();
+            //eightQueen.CalculateQueen(0);
+
+            var test = new Knapsack();
+            test.f(0, 0);
+            int res = test.GetMaxDP();
             Console.WriteLine("Hello World!");
             Console.ReadLine();
         }

@@ -48,6 +48,7 @@
     <Compile Include="CriticialRouters.cs" />
     <Compile Include="EightQueen.cs" />
     <Compile Include="KClosestPoints.cs" />
+    <Compile Include="knapsack.cs" />
     <Compile Include="MinHeap.cs" />
     <Compile Include="MinStepsTreasureIslands.cs" />
     <Compile Include="NumberOfClusters.cs" />
