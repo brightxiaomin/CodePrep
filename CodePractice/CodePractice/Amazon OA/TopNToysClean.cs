@@ -66,11 +66,14 @@ namespace CodePractice
             }
 
             // now heap is array contain top toys
-            for (int i = topToys - 1; i >= 0; i--)
+            for (int i = topToys - 1; i >= 0; i--) // dont need to do for 0, but we need to add last heap[0] to output, so still i >= 0
             {
                 output.Add(heap[0]);
-                heap[0] = heap[i];
-                ReCalculateDown(heap, 0, i + 1, freq);
+                heap[0] = heap[i]; 
+                // since heap[0] is gone, so there are two duplicate values in the array, thats why it was working before.
+                // we dont need to include heap[i], last element in the array. size should decrease by one before we re heapify, index always 1 less than size, so good to use 
+                // then for i = 1 and 0, no swap in the sink method.
+                ReCalculateDown(heap, 0, i, freq);
             }
 
             output.Reverse();

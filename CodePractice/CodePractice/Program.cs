@@ -18,6 +18,12 @@ namespace CodePractice
             //test[3] = new int[] { 1 };
 
 
+            //var test3 = Console.ReadLine();
+
+            //string[] ad = test3.Split(',');
+
+
+
             //KClosestPoints solu = new KClosestPoints();
             //int[][] res = solu.KClosest(test, 2);
 
@@ -69,6 +75,13 @@ namespace CodePractice
             //test.PrintLCS(a, 6, 5);
             #endregion
 
+            //EightQueen eightQueen = new EightQueen();
+            //eightQueen.CalculateQueen(0);
+
+            var test = new Knapsack();
+            test.f(0, 0);
+            int res = test.GetMaxDP();
+            Console.WriteLine("Hello World!");
             Console.ReadLine();
         }
     }

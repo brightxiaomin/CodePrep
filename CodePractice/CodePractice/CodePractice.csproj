@@ -61,6 +61,7 @@
     <Compile Include="Amazon OA\TopNToys.cs" />
     <Compile Include="Amazon OA\TopNToysClean.cs" />
     <Compile Include="TwoSumAll.cs" />
+    <Compile Include="WordLadder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
