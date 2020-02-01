@@ -53,11 +53,22 @@ namespace CodePractice
             //tt.Sort();
 
             //tt.RemoveAt(tt.Count - 1);
+
+
+            //EightQueen eightQueen = new EightQueen();
+            //eightQueen.CalculateQueen(0);
+
+
+            //string a = "ABCBDAB", b = "BDCABA";
+            //var test = new LongestCommonSequence();
+            //int res = test.GetLCSLength(a, b);
+            //Console.WriteLine("length: " + res);
+            //test.PrintDecisionMatrix();
+            ////int count = test.PrintLCSRevers(a);
+            ////Console.WriteLine("count is " + count);
+            //test.PrintLCS(a, 6, 5);
             #endregion
 
-            EightQueen eightQueen = new EightQueen();
-            eightQueen.CalculateQueen(0);
-            Console.WriteLine("Hello World!");
             Console.ReadLine();
         }
     }

@@ -43,22 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CriticalConnections.cs" />
-    <Compile Include="CriticalConnectionsAllCasePassed.cs" />
-    <Compile Include="CriticialRouters.cs" />
-    <Compile Include="EightQueen.cs" />
-    <Compile Include="KClosestPoints.cs" />
+    <Compile Include="Amazon OA\CriticalConnections.cs" />
+    <Compile Include="Amazon OA\CriticalConnectionsAllCasePassed.cs" />
+    <Compile Include="Amazon OA\CriticialRouters.cs" />
+    <Compile Include="GeekBang\EightQueen.cs" />
+    <Compile Include="Amazon OA\KClosestPoints.cs" />
+    <Compile Include="LongestCommonSequence.cs" />
     <Compile Include="MinHeap.cs" />
-    <Compile Include="MinStepsTreasureIslands.cs" />
-    <Compile Include="NumberOfClusters.cs" />
-    <Compile Include="ProductSuggestionPrefer.cs" />
-    <Compile Include="ProductSuggetion.cs" />
+    <Compile Include="Amazon OA\MinStepsTreasureIslands.cs" />
+    <Compile Include="Amazon OA\NumberOfClusters.cs" />
+    <Compile Include="Amazon OA\ProductSuggestionPrefer.cs" />
+    <Compile Include="Amazon OA\ProductSuggetion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RockPaperScissor.cs" />
-    <Compile Include="RottingOrange.cs" />
-    <Compile Include="TopNToys.cs" />
-    <Compile Include="TopNToysClean.cs" />
+    <Compile Include="Amazon OA\RottingOrange.cs" />
+    <Compile Include="Amazon OA\TopNToys.cs" />
+    <Compile Include="Amazon OA\TopNToysClean.cs" />
     <Compile Include="TwoSumAll.cs" />
   </ItemGroup>
   <ItemGroup>
