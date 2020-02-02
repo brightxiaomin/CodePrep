@@ -86,9 +86,116 @@ namespace CodePractice
             return len[m, n];
         }
 
+        // optimize 1
+        // use two rows and temp variable 
+        // can not reconstruct the sequence, can only get the number now
+        public int GetLCSLengthUsingTwoRows(string s1, string s2)
+        {
+            // we want do row-major order, process row by row in the 2-d Grid
+            //so need keep cloumns smaller than rows
+            int rows = s1.Length, columns = s2.Length;
+            if (rows < columns) return GetLCSLengthUsingTwoRows(s2, s1); // if columns is greater, swap
+
+            //two array to store previous and current state
+            int[] previous = Enumerable.Repeat(0, columns + 1).ToArray();
+            int[] current = new int[columns + 1]; // +1 is for sentinel
+            current[0] = 0;
+
+            //process the strings, two loops
+            // first loop all rows (all character in s1)
+            // second loop all columns, index 0 is sentinel, so starting at index 1, (all characters in s2)
+            for (int i = 1; i <= rows; i++)
+            {
+                int temp = previous[0];  // it will always be 0
+                for (int j = 1; j <= columns; j++)
+                {
+                    //because we go from 1 to cloumns, go forward, not backward,
+                    // only need to store the value of previous[j] before we update it to current[j]
+                    //after current j
+                    if (s1[i - 1] == s2[j - 1])
+                    {
+                        // from up and left
+                        current[j] = temp + 1;
+                    }
+                    else
+                    {
+                        //from up
+                        if (previous[j] >= current[j - 1]) // compare up with left
+                        {
+                            //take up record
+                            current[j] = previous[j];
+                        }
+                        else
+                        {
+                            //take left
+                            current[j] = current[j - 1];
+                        }
+                    }
+                    temp = previous[j];
+                    previous[j] = current[j];
+                }
+            }
+
+            return current[columns];
+        }
+
+        public int GetLCSLengthUsingOneRow(string s1, string s2)
+        {
+            // we want do row-major order, process row by row in the 2-d Grid
+            //so need keep cloumns smaller than rows
+            int rows = s1.Length, columns = s2.Length;
+            if (rows < columns) return GetLCSLengthUsingOneRow(s2, s1); // if columns is greater, swap
+
+            //onley one array to store previous and current state
+            int[] current = Enumerable.Repeat(0, columns + 1).ToArray();
+
+            //process the strings, two loops
+            // first loop all rows (all character in s1)
+            // second loop all columns, index 0 is sentinel, so starting at index 1, (all characters in s2)
+            for (int i = 1; i <= rows; i++)
+            {
+                int lastLeft = current[0];  // it will always be 0
+                int lastCurrent;
+                for (int j = 1; j <= columns; j++)
+                {
+
+                    //because we go from 1 to cloumns, go forward, not backward,
+                    //record current[j] into temp before update current[j]
+                    lastCurrent = current[j];
+                    if (s1[i - 1] == s2[j - 1])
+                    {
+                        // from up and left, use last left
+                        current[j] = lastLeft + 1;
+                    }
+                    else
+                    {
+                        ////from up
+                        //if (lastCurrent >= current[j - 1]) // compare up with left, last current
+                        //{
+                        //    //take up record, use last current, nothing to do
+                        //    //current[j] = lastCurrent; // this line no meaning, since current[j] did not change after line 164, remove it
+                        //}
+                        //else
+                        //{
+                        //    //take left
+                        //    current[j] = current[j - 1];
+                        //}
+
+                        //simply the above to 
+                        if (lastCurrent < current[j - 1]) //compare up with left, take left
+                            current[j] = current[j - 1];
+                    }
+                    //after process, we actually move to j + 1, lastCurrent becomes lastLeft
+                    lastLeft = lastCurrent;
+                }
+            }
+
+            return current[columns];
+        }
+
         //Print LCS reverse order
         //loop through decision,
-        public int PrintLCSRevers(string s1)
+        public int PrintLCSReverse(string s1)
         {
             int m = decision.GetLength(0), n = decision.GetLength(1);
             int count = 0;

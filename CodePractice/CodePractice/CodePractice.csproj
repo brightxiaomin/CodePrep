@@ -49,7 +49,7 @@
     <Compile Include="Flexera\Billboards.cs" />
     <Compile Include="GeekBang\EightQueen.cs" />
     <Compile Include="Amazon OA\KClosestPoints.cs" />
-    <Compile Include="GeekBang\knapsack.cs" />
+    <Compile Include="GeekBang\Knapsack.cs" />
     <Compile Include="LongestCommonSequence.cs" />
     <Compile Include="MinHeap.cs" />
     <Compile Include="Amazon OA\MinStepsTreasureIslands.cs" />
