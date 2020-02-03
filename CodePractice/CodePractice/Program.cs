@@ -48,11 +48,11 @@ namespace CodePractice
             #endregion
 
 
-            //var test = new Knapsack();
+            var test = new Knapsack();
             //test.CalculateMaxUsingMemo(0, 0);
-            //int res = test.GetMaxDP();
+            int res = test.GetMaxDP();
 
-            //Console.WriteLine(res);
+            Console.WriteLine(res);
             Console.ReadLine();
         }
     }

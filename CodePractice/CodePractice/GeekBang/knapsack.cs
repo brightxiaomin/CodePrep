@@ -127,11 +127,34 @@ namespace CodePractice
                 }
             }
 
-            for (int i = capacity; i >= 0; i--)
-                // we need find largest index which is true (reached) in the last stage
-                if (states[num][i]) return i; // index i is weight
+            //for (int j = capacity; j >= 0; j--)
+            //    // we need find largest index which is true (reached) in the last stage
+            //    if (states[num][j]) return j; // index i is weight
+            //  return 0;
 
-            return 0;
+            //to print in reverse order
+            int k;
+            for (k = capacity; k >= 0; k--)
+                // we need find largest index which is true (reached) in the last stage
+                if (states[num][k]) break;
+
+            int max = k;
+            for (int i = num; i > 0; i--)
+            {
+                //i,j comes from i-1, j-weight[i-1]
+                if (k - weight[i - 1] >= 0 && states[i - 1][k - weight[i - 1]])
+                {
+                    Console.Write(weight[i-1]);
+                    Console.Write("->");
+
+                    //update j
+                    k -= weight[i - 1];
+                }
+                //else comes from i-1, j
+                //j is same
+            }
+            Console.WriteLine();
+            return max;
         }
 
         //optimize to save some space, one d array

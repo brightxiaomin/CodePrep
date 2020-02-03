@@ -152,10 +152,11 @@ namespace CodePractice
             //process the strings, two loops
             // first loop all rows (all character in s1)
             // second loop all columns, index 0 is sentinel, so starting at index 1, (all characters in s2)
+            int lastLeft, lastCurrent;
             for (int i = 1; i <= rows; i++)
             {
-                int lastLeft = current[0];  // it will always be 0
-                int lastCurrent;
+                 lastLeft = current[0];  // it will always be 0
+                //int lastCurrent;
                 for (int j = 1; j <= columns; j++)
                 {
 
