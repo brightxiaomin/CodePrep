@@ -46,6 +46,7 @@
     <Compile Include="Amazon OA\CriticalConnections.cs" />
     <Compile Include="Amazon OA\CriticalConnectionsAllCasePassed.cs" />
     <Compile Include="Amazon OA\CriticialRouters.cs" />
+    <Compile Include="Anagram.cs" />
     <Compile Include="CanJump.cs" />
     <Compile Include="Flexera\Billboards.cs" />
     <Compile Include="GeekBang\EightQueen.cs" />
