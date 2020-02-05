@@ -8,7 +8,7 @@ namespace CodePractice
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             #region old test
 
@@ -48,9 +48,17 @@ namespace CodePractice
             #endregion
 
 
-            var test = new Knapsack();
-            //test.CalculateMaxUsingMemo(0, 0);
-            int res = test.GetMaxDP();
+            //var test = new Knapsack();
+            ////test.CalculateMaxUsingMemo(0, 0);
+            //int res = test.GetMaxDP();
+
+            //[5,9,3,2,1,0,2,3,3,1,0,0]
+            // Mine: -2147483647
+            //expected: 3
+
+            int[] test = { 5, 9, 3, 2, 1, 0, 2, 3, 3, 1, 0, 0 };
+
+            var res = new CanJump().JumpGreedy(test);
 
             Console.WriteLine(res);
             Console.ReadLine();

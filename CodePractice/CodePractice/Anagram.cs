@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CodePractice
 {
-    using System.Collections.Generic;
-    public class Solution
+
+    public class Anagram
     {
 
         //this more like two pointers.
