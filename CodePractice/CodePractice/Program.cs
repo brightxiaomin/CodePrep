@@ -55,10 +55,8 @@ namespace CodePractice
             //[5,9,3,2,1,0,2,3,3,1,0,0]
             // Mine: -2147483647
             //expected: 3
-
             int[] test = { 5, 9, 3, 2, 1, 0, 2, 3, 3, 1, 0, 0 };
-
-            var res = new CanJump().JumpGreedy(test);
+            var res = new JumpGame().JumpGreedy(test);
 
             Console.WriteLine(res);
             Console.ReadLine();

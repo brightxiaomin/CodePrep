@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodePractice
 {
-    class CanJump
+    class JumpGame
     {
         public bool CanJumpM(int[] nums) 
         {
