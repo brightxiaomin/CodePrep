@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodePractice.LeetCode;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,9 +56,18 @@ namespace CodePractice
             //[5,9,3,2,1,0,2,3,3,1,0,0]
             // Mine: -2147483647
             //expected: 3
-            int[] test = { 5, 9, 3, 2, 1, 0, 2, 3, 3, 1, 0, 0 };
-            var res = new JumpGame().JumpGreedy(test);
+            //int[] test = { 5, 9, 3, 2, 1, 0, 2, 3, 3, 1, 0, 0 };
+            //var res = new JumpGame().JumpGreedy(test);
+            //var res = new SlidingWindowSubstrings().LengthOfLongestSubstring("abcabcbb");
 
+            //string m = "aguokepatgbnvfqmgmlcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupuculmgmqfvnbgtapekouga";
+            //string s = "eeccccbebaeeabebccceea";
+            //string s = "abca";
+            //string s = "aguokepatgbnvfqmgmlcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupuculmgmqfvnbgtapekouga";
+            string s = "abc";
+
+            //Console.WriteLine(m == s);
+            var res = new Palindrome().ValidPalindrome(s);
             Console.WriteLine(res);
             Console.ReadLine();
         }

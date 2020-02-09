@@ -212,5 +212,33 @@ namespace CodePractice.LeetCode
             return result;
         }
 
+        //sliding approach
+        public int LengthOfLongestSubstring(string s)
+        {
+            int left = 0, right = 0, count = 0;
+            int[] map = new int[256]; // assume all ascii charaters
+            int len = 0;
+
+            while(right < s.Length)
+            {
+                char c = s[right];
+                if (map[c] == 1) count++; //repeating char
+                map[c] = map[c] + 1;
+                right++;
+
+                while(count > 0) //when condition is invalid, we move left to make it valid
+                {
+                    char temp = s[left];
+                    if (map[temp] > 1) count--; // the repeating char
+                    map[temp] = map[temp] - 1;
+                    left++;
+                }
+                len = Math.Max(len, right - left);  //when we update result, the invariant is satisfied, (no repeating character) within the sliding window. Usually the invariant is just the constraint
+                //invariant is [left, right) contains a substring without repeating characters, which means every one here is a candidate.
+            }
+
+            return len;
+        }
+
     }
 }
