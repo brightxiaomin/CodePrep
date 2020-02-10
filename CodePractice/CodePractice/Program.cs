@@ -67,9 +67,45 @@ namespace CodePractice
             string s = "abc";
 
             //Console.WriteLine(m == s);
-            var res = new Palindrome().ValidPalindrome(s);
+            //var res = new Palindrome().ValidPalindrome(s);
+            //Console.WriteLine(res);
+
+            int[] prices = { 7, 1, 5, 3, 6, 4 };
+            var res = MaxProfit(prices);
             Console.WriteLine(res);
             Console.ReadLine();
+        }
+
+        public static int MaxProfit(int[] prices)
+        {
+            if (prices == null || prices.Length == 0) return 0;
+            int len = prices.Length, output = 0;
+            //two arrays
+            int[] min = new int[len];
+            int[] max = new int[len];
+
+            min[0] = 0;
+            max[len - 1] = len - 1;
+
+            for (int i = 1; i < len; i++)
+            {
+                if (prices[i] <= prices[min[i - 1]])
+                    min[i] = i;
+                else
+                    min[i] = min[i - 1];
+
+                if (prices[len - i - 1] >= prices[max[len - i]])
+                    max[len - i - 1] = len - i - 1;
+                else
+                    max[len - i - 1] = max[len - i];
+            }
+
+            for (int i = 0; i < len; i++)
+            {
+                output = Math.Max(prices[max[i]] - prices[min[i]], output);
+            }
+
+            return output;
         }
     }
 }
