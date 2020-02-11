@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace CodePractice
 {
-    public class CriticalConnections
+    public class CriticalConnectionClass
     {
         // Basically, it uses dfs to travel through the graph to find if current vertex u, can travel back to u or previous vertex
         //low[u] records the lowest vertex u can reach
         //disc[u] records the time when u was discovered
 
-        public List<List<int>> GetCriticalConnections(int n, List<List<int>> connections)
+        public IList<IList<int>> CriticalConnections(int n, IList<IList<int>> connections)
         {
             int[] low = new int[n];
             // use adjacency list instead of matrix will save some memory, adjmatrix will cause MLE
             List<int>[] graph = new List<int>[n];
-            List<List<int>> res = new List<List<int>>();
+            List<IList<int>> res = new List<IList<int>>();
 
             int[] disc = Enumerable.Repeat<int>(-1, n).ToArray();  // use disc to track if visited (disc[i] == -1)
 
@@ -46,7 +46,7 @@ namespace CodePractice
 
         int time = 0; // time when discover each vertex
 
-        private void DFS(int u, int[] low, int[] disc, List<int>[] graph, List<List<int>> res, int pre)
+        private void DFS(int u, int[] low, int[] disc, List<int>[] graph, List<IList<int>> res, int pre)
         {
             disc[u] = low[u] = ++time; // discover u
             for (int j = 0; j < graph[u].Count; j++)

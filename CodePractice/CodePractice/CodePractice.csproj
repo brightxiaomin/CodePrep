@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Amazon OA\CriticalConnections.cs" />
+    <Compile Include="Amazon OA\CriticalConnectionClass.cs" />
     <Compile Include="Amazon OA\CriticalConnectionsAllCasePassed.cs" />
     <Compile Include="Amazon OA\CriticialRouters.cs" />
     <Compile Include="Amazon Coding Problems\Anagram.cs" />
