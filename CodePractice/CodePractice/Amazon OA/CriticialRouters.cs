@@ -11,6 +11,8 @@ namespace CodePractice
 		// this method is similar to https://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/
 		// https://www.geeksforgeeks.org/tarjan-algorithm-find-strongly-connected-components/
 
+		//good video about finding bridges
+
 		private int time = 0;
         public List<int> GetCriticalNodes(int[][] links, int numLinks, int numRouters)
         {
@@ -28,7 +30,9 @@ namespace CodePractice
 				map[link[0]].Add(link[1]);
 				map[link[1]].Add(link[0]);
 			}
-			
+
+
+			//index i represent node i 
 			HashSet<int> set = new HashSet<int>();
 			int[] low = new int[numRouters];
 			int[] dis = Enumerable.Repeat<int>(-1, numRouters).ToArray(); //also server the purpose of visited[] array purpose. if not -1, mean visited.
@@ -60,7 +64,7 @@ namespace CodePractice
 
 					//#1. current is root of DFS tree and has two or more chilren.
 					// #2. If u is not root and low value of one of its child is more than discovery value of u.
-					if ((parent[cur] == -1 && children > 1) || (parent[cur] != -1 && low[ne] >= dis[cur]))
+					if ((parent[cur] == -1 && children > 1) || (parent[cur] != -1 && low[ne] >= dis[cur])) // = is right
 						res.Add(cur);
 				}
 				else if (ne != parent[cur])
