@@ -52,7 +52,9 @@
     <Compile Include="GeekBang\EightQueen.cs" />
     <Compile Include="Amazon OA\KClosestPoints.cs" />
     <Compile Include="GeekBang\Knapsack.cs" />
+    <Compile Include="LeetCode\LFU.cs" />
     <Compile Include="LeetCode\LRUCache.cs" />
+    <Compile Include="LeetCode\LRUCacheLinkedListHashMap.cs" />
     <Compile Include="LeetCode\Palindrome.cs" />
     <Compile Include="LeetCode\SlidingWindowSubstrings.cs" />
     <Compile Include="LongestCommonSequence.cs" />

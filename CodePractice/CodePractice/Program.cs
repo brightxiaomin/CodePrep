@@ -46,7 +46,7 @@ namespace CodePractice
             //int count = test.PrintLCSRevers(a);
             //Console.WriteLine("count is " + count);
             //test.PrintLCS(a, 6, 5);
-            #endregion
+
 
 
             //var test = new Knapsack();
@@ -64,7 +64,7 @@ namespace CodePractice
             //string s = "eeccccbebaeeabebccceea";
             //string s = "abca";
             //string s = "aguokepatgbnvfqmgmlcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupuculmgmqfvnbgtapekouga";
-            string s = "abc";
+            //string s = "abc";
 
             //Console.WriteLine(m == s);
             //var res = new Palindrome().ValidPalindrome(s);
@@ -72,17 +72,8 @@ namespace CodePractice
 
             //var res = new SlidingWindowSubstrings().LengthOfLongestSubstring("abcdefgcx");
             //Console.WriteLine(res);
-            LRUCache cache = new LRUCache(2 /* capacity */ );
+            #endregion
 
-            cache.Put(1, 1);
-            cache.Put(2, 2);
-            cache.Get(1);       // returns 1
-            cache.Put(3, 3);    // evicts key 2
-            cache.Get(2);       // returns -1 (not found)
-            cache.Put(4, 4);    // evicts key 1
-            cache.Get(1);       // returns -1 (not found)
-            cache.Get(3);       // returns 3
-            cache.Get(4);       // returns 4
             Console.ReadLine();
         }
 
