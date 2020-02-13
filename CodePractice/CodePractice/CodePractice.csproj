@@ -55,8 +55,10 @@
     <Compile Include="LeetCode\LFU.cs" />
     <Compile Include="LeetCode\LRUCache.cs" />
     <Compile Include="LeetCode\LRUCacheLinkedListHashMap.cs" />
+    <Compile Include="LeetCode\MorrisTreeTraversal.cs" />
     <Compile Include="LeetCode\Palindrome.cs" />
     <Compile Include="LeetCode\SlidingWindowSubstrings.cs" />
+    <Compile Include="LeetCode\TreeTraversalStack.cs" />
     <Compile Include="LongestCommonSequence.cs" />
     <Compile Include="MinHeap.cs" />
     <Compile Include="Amazon OA\MinStepsTreasureIslands.cs" />
