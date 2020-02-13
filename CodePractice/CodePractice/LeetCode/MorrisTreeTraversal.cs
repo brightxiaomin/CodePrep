@@ -21,7 +21,7 @@ namespace CodePractice.LeetCode
             }
         }
 
-
+        
         class Tree
         {
             Node root;
@@ -60,7 +60,7 @@ namespace CodePractice.LeetCode
                         else
                         {
                             prev.right_node = null;
-                            Console.WriteLine(curr.data + " "); // Visit here, come back to current node
+                            Console.WriteLine(curr.data + " "); // Visit here, come back to current node, left subtree has be traversed already, now come back
                             curr = curr.right_node;
                         }
 
@@ -91,7 +91,7 @@ namespace CodePractice.LeetCode
 
             //            if (predecessor.right == null)
             //            {
-            //                output.add(node.val);  // Visit before come back, before processing.
+            //                output.add(node.val);  // Visit before even processing the left 
             //                predecessor.right = node;
             //                node = node.left;
             //            }

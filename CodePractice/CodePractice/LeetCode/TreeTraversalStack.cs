@@ -36,6 +36,8 @@ namespace CodePractice.LeetCode
         //    return output;
         //}
 
+        //Adopt this one for stack imp for in order,
+        // first go all the way left, output, then one step to the left
         //public List<Integer> inorderTraversal(TreeNode root)
         //{
         //    List<Integer> res = new ArrayList<>();
