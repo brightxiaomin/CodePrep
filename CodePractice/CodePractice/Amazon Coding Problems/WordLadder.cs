@@ -85,5 +85,74 @@ namespace CodePractice
             return count <= 1;
         }
 
+
+        //use a-z transformation.
+        public int LadderLength2(string beginWord, string endWord, IList<string> wordList)
+        {
+            // assumption is that beginWord is not in wordList
+            // so we dont need to remove from set
+            // because logic is in set, first remove, then add to queue.
+            int level = 1;
+            int len = beginWord.Length;
+            //change list to a set, so contain, remove is O(1)
+            //also remove duplicates
+            HashSet<string> set = new HashSet<string>(wordList);
+
+            //need a queue
+            Queue<string> queue = new Queue<string>();
+
+            //start the queue
+            queue.Enqueue(beginWord);
+
+            //BFS
+            while(queue.Count > 0)
+            {
+                //level iteration, have to know which level it is
+                //need a size
+                int size = queue.Count;
+                for(int i = 0; i < size; i++)  
+                {
+                    string s = queue.Dequeue();
+
+                    //check now
+                    if (s == endWord) return level;
+
+                    //now is the trick
+                    //for each letter in a string, transform it, 
+                    //to char array, then replace it
+                    for(int j = 0; j < len; j++) //O(L * 26)
+                    {
+                        //char[] c = s.ToCharArray();
+                        //for (char ch = 'a'; ch <= 'z'; ch++)
+                        //{
+                        //    //if (ch == s[j]) continue; // skip itself, its unnecessary as we remove temp because add to queue, next level, it wont be added to queue
+                        //    c[j] = ch;
+                        //    string temp = new string(c);
+                        //    if (set.Remove(temp))  //in set and removed
+                        //    {
+                        //        queue.Enqueue(temp);
+                        //    }
+                        //}
+
+                        //or this way using stringbuilder
+                        StringBuilder sb = new StringBuilder(s);
+                        for (char ch = 'a'; ch <= 'z'; ch++)
+                        {
+                            sb[j] = ch;
+                            if (set.Remove(sb.ToString()))  //in set and removed
+                            {
+                                queue.Enqueue(sb.ToString());
+                            }
+                        }
+                    }
+                }
+
+                //go to top loop, another level
+                level++;
+            }
+
+            return 0;
+        }
+
     }
 }
