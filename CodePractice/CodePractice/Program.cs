@@ -74,6 +74,8 @@ namespace CodePractice
             //Console.WriteLine(res);
             #endregion
 
+            List<string> test = new List<string> { "hot", "dot", "dog", "lot", "log", "cog" };
+            var res = new WordLadderII().FindLadders2("hit", "cog", test);
             Console.ReadLine();
         }
 

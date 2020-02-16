@@ -57,5 +57,111 @@ namespace CodePractice.LeetCode
         //    }
         //    return res;
         //}
+
+        //use linked list
+        //this is actually a right PREORDER (parent node -> right child ->left child ) and then reverse it.
+        public List<int> PostorderTraversal(TreeNode root)
+        {
+            Stack<TreeNode> stack = new Stack<TreeNode>();
+            LinkedList<int> output = new LinkedList<int>();
+            if (root == null)
+            {
+                return output.ToList();
+            }
+            
+            stack.Push(root);
+            while (stack.Count > 0)
+            {
+                TreeNode node = stack.Pop();
+                output.AddFirst(node.val);
+                if (node.left != null)
+                {
+                    stack.Push(node.left);
+                }
+                if (node.right != null)
+                {
+                    stack.Push(node.right);
+                }
+            }
+            return output.ToList();
+        }
+
+        //use list
+        public List<int> PostorderTraversal2(TreeNode root)
+        {
+            Stack<TreeNode> stack = new Stack<TreeNode>();
+            List<int> output = new List<int>();
+            if (root == null)
+            {
+                return output;
+            }
+
+            stack.Push(root);
+            while (stack.Count > 0)
+            {
+                TreeNode node = stack.Pop();
+                output.Add(node.val);
+                if (node.left != null)
+                {
+                    stack.Push(node.left);
+                }
+                if (node.right != null)
+                {
+                    stack.Push(node.right);
+                }
+            }
+            output.Reverse();
+            return output;
+        }
+
+        // https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/45582/A-real-Postorder-Traversal-.without-reverse-or-insert-4ms
+        //real post order using double pushing
+        public List<int> PostorderTraversal3(TreeNode root)
+        {
+            Stack<TreeNode> stack = new Stack<TreeNode>();
+            List<int> output = new List<int>();
+            if (root == null)
+            {
+                return output;
+            }
+
+            stack.Push(root);
+            stack.Push(root);
+            TreeNode cur;
+            while (stack.Count > 0)
+            {
+                cur = stack.Peek();
+                stack.Pop();
+                if (stack.Count > 0 && stack.Peek() == cur)
+                {
+                    if (cur.right != null)
+                    {
+                        stack.Push(cur.right);
+                        stack.Push(cur.right);
+                    }
+                    if (cur.left != null)
+                    {
+                        stack.Push(cur.left);
+                        stack.Push(cur.left);
+                    }
+                }
+                else
+                    output.Add(cur.val);
+            }
+            return output;
+
+        }
+
+        public class TreeNode
+        {
+            public int val;
+            public TreeNode left;
+            public TreeNode right;
+
+            public TreeNode(int x)
+            {
+                val = x;
+            }
+        }
     }
 }
