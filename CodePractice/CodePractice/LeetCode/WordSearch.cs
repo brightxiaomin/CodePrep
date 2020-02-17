@@ -51,5 +51,18 @@ namespace CodePractice.LeetCode
 
             return exist;
         }
+
+
+        //word search II, kind of brutal force
+        public IList<string> FindWords(char[][] board, string[] words)
+        {
+            List<string> ret = new List<string>();
+            foreach (string word in words)
+            {
+                if (Exist(board, word))
+                    ret.Add(word);
+            }
+            return ret;
+        }
     }
 }
