@@ -48,6 +48,7 @@
     <Compile Include="Amazon OA\CriticalConnectionsAllCasePassed.cs" />
     <Compile Include="Amazon OA\CriticialRouters.cs" />
     <Compile Include="Amazon Coding Problems\Anagram.cs" />
+    <Compile Include="LeetCode\IntToEnglish.cs" />
     <Compile Include="LeetCode\JumpGame.cs" />
     <Compile Include="Flexera\Billboards.cs" />
     <Compile Include="GeekBang\EightQueen.cs" />
