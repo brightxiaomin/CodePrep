@@ -59,6 +59,7 @@
     <Compile Include="LeetCode\LRUCacheLinkedListHashMap.cs" />
     <Compile Include="LeetCode\MorrisTreeTraversal.cs" />
     <Compile Include="LeetCode\Palindrome.cs" />
+    <Compile Include="LeetCode\RandomizedSet.cs" />
     <Compile Include="LeetCode\SerializeBinaryTree.cs" />
     <Compile Include="LeetCode\SlidingWindowSubstrings.cs" />
     <Compile Include="LeetCode\TreeTraversalStack.cs" />

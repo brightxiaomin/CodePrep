@@ -80,5 +80,38 @@ namespace CodePractice
         }
 
 
+        //compare diag
+        public bool SearchMatrix(int[,] matrix, int target)
+        {
+            int rows = matrix.GetLength(0), cols = matrix.GetLength(1);
+
+            int lr, lc, rr = rows - 1, rc = cols - 1;
+
+            if( rows > cols)
+            {
+                lr = rows - cols;
+                lc = 0;
+            }
+            else
+            {
+                lr = 0;
+                lc = cols - rows;
+            }
+
+            int left = 0, right = Math.Min(rows, cols) - 1;
+         
+
+            //boundary define
+            while(left < right)
+            {
+                int mid = (left + right) / 2;
+                if (target > matrix[lr + mid, lc + mid])
+                {
+                    left = mid + 1;
+                }
+                else
+                    right = mid;
+            }
+        }
     }
 }
