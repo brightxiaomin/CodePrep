@@ -11,10 +11,10 @@ namespace CodePractice.LeetCode
     // plus hashtable to store key value
     public class LRUCache
     {
-        private int capacity;
+        private readonly int capacity;
         private int count;
-        private int[] store;
-        private Dictionary<int, int> cache;
+        private readonly int[] store;
+        private readonly Dictionary<int, int> cache;
 
         public LRUCache(int capacity)
         {

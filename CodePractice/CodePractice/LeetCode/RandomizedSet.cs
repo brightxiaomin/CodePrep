@@ -12,14 +12,14 @@ namespace CodePractice.LeetCode
     // then remove last one
     public class RandomizedSet
     {
-        private Dictionary<int, int> store; // key is value, value is index
-        private List<int> set;
-        private Random random;
+        private readonly Dictionary<int, int> store; // key is value, value is index
+        private readonly List<int> set;
+        private readonly Random random;
         /** Initialize your data structure here. */
         public RandomizedSet()
         {
             store = new Dictionary<int, int>();
-            set = new List<int>;
+            set = new List<int>();
             random = new Random();
         }
 

@@ -1,11 +1,11 @@
 using System;
 
-public class MinHeap
+public class MinHeap2
 {
 	private readonly int[] _elements;
 	private int _size;
 
-	public MinHeap(int size)
+	public MinHeap2(int size)
 	{
 		_elements = new int[size];
 	}

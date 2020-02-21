@@ -13,7 +13,7 @@ namespace CodePractice
         private int maxW = int.MinValue; // the result for max weight
         private int maxValue = int.MinValue; // result for max value
         private readonly int[] weight = { 2, 4, 7, 9, 15 };
-        private int[] value = { 3, 4, 8, 9, 6 }; // value for item
+        private readonly int[] value = { 3, 4, 8, 9, 6 }; // value for item
         private readonly int num = 5; // item numbers
         private readonly int capacity = 12; // capacity
 

@@ -149,8 +149,8 @@ namespace CodePractice.LeetCode
         public class DoubleLinkedList
         {
             public int listSize;
-            DLLNode head;
-            DLLNode tail;
+            readonly DLLNode head;
+            readonly DLLNode tail;
             public DoubleLinkedList()
             {
                 this.listSize = 0;

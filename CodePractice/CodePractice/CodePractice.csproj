@@ -57,6 +57,8 @@
     <Compile Include="LeetCode\LFU.cs" />
     <Compile Include="LeetCode\LRUCache.cs" />
     <Compile Include="LeetCode\LRUCacheLinkedListHashMap.cs" />
+    <Compile Include="LeetCode\MedianFinder.cs" />
+    <Compile Include="LeetCode\MedianFinderHeap.cs" />
     <Compile Include="LeetCode\MorrisTreeTraversal.cs" />
     <Compile Include="LeetCode\Palindrome.cs" />
     <Compile Include="LeetCode\RandomizedSet.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="Amazon OA\TopNToysClean.cs" />
     <Compile Include="Amazon Coding Problems\TwoSumAll.cs" />
     <Compile Include="Amazon Coding Problems\WordLadder.cs" />
+    <Compile Include="SimpleHeap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

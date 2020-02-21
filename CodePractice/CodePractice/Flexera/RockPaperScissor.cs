@@ -12,7 +12,7 @@ namespace CodePractice
         //rock beats scissors
         //scissors beats paper
         //paper beats rock
-        static Dictionary<char, char> beatRules = new Dictionary<char, char>
+        static readonly Dictionary<char, char> beatRules = new Dictionary<char, char>
         {
             {'S', 'R' },
             {'P', 'S' },

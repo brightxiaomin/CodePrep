@@ -8,7 +8,7 @@ namespace CodePractice
 {
     public class EightQueen
     {
-        private int[] result = new int[8];
+        private readonly int[] result = new int[8];
         private int total = 0;
 
         public void CalculateQueen(int row)

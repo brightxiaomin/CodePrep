@@ -81,7 +81,7 @@ namespace CodePractice
 
 
         //compare diag
-        public bool SearchMatrix(int[,] matrix, int target)
+        public void SearchMatrix(int[,] matrix, int target)
         {
             int rows = matrix.GetLength(0), cols = matrix.GetLength(1);
 

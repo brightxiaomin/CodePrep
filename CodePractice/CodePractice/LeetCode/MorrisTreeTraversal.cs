@@ -24,7 +24,7 @@ namespace CodePractice.LeetCode
         
         class Tree
         {
-            Node root;
+            readonly Node root;
 
             void MorrisInOrder(Node root)
             {
