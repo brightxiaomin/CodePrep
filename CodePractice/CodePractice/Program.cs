@@ -106,6 +106,8 @@ namespace CodePractice
 
             var ddd = aut.Input('#');
             Console.ReadLine();
+            string s = "test";
+           
         }
 
 
@@ -142,5 +144,7 @@ namespace CodePractice
                     right = mid;
             }
         }
+
+
     }
 }
