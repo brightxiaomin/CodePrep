@@ -65,4 +65,95 @@ namespace CodePractice.LeetCode
             return ret;
         }
     }
+
+
+    public class Solution
+    {
+        public IList<int> TopKFrequent(int[] nums, int k)
+        {
+            List<int> output = new List<int>();
+            Dictionary<int, int> fre = new Dictionary<int, int>();
+
+            foreach (int s in nums)
+            {
+                if (!fre.ContainsKey(s))
+                {
+                    fre.Add(s, 1);
+                    continue;
+                }
+                fre[s] = fre[s] + 1;
+            }
+            nums = fre.Keys.ToArray(); // remove duplicates in dict
+            int[] heap = new int[k];
+
+            //insert the k words in heap
+            for (int i = 0; i < k; i++)
+            {
+                heap[i] = nums[i];
+                ReCalculateUp(heap, i, fre);
+            }
+
+            for (int i = k; i < nums.Length; i++)
+            {
+                if (Compare(nums[i], heap[0], fre) > 0)
+                {
+                    heap[0] = nums[i];
+                    ReCalculateDown(heap, 0, k, fre);
+                }
+            }
+
+            for (int i = k - 1; i >= 0; i--)
+            {
+                output.Add(heap[0]);
+                heap[0] = heap[i];
+                ReCalculateDown(heap, 0, i, fre);
+            }
+
+            output.Reverse();
+
+            return output;
+        }
+
+        public void ReCalculateDown(int[] arr, int index, int size, Dictionary<int, int> freq)
+        {
+            while (true)
+            {
+                int min = index;
+                int left = 2 * index + 1;
+                int right = 2 * index + 2;
+
+                if (left < size && Compare(arr[min], arr[left], freq) > 0) min = left;
+                if (right < size && Compare(arr[min], arr[right], freq) > 0) min = right;
+                if (min == index) return; // NO swap
+
+                Swap(arr, min, index);
+                index = min;
+            }
+        }
+
+        public void ReCalculateUp(int[] arr, int index, Dictionary<int, int> freq)
+        {
+            // has parent node and parent value > child value
+            while (index > 0 && Compare(arr[(index - 1) / 2], arr[index], freq) > 0)
+            {
+                Swap(arr, index, (index - 1) / 2);
+                index = (index - 1) / 2;
+            }
+        }
+
+        public int Compare(int k1, int k2, Dictionary<int, int> freq)
+        {
+            if (freq[k1] != freq[k2])
+                return freq[k1] - freq[k2];
+
+            return k2.CompareTo(k1);
+        }
+
+        public void Swap(int[] arr, int a, int b)
+        {
+            int temp = arr[a];
+            arr[a] = arr[b];
+            arr[b] = temp;
+        }
+    }
 }

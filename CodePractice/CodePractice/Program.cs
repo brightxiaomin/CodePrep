@@ -74,8 +74,37 @@ namespace CodePractice
             //Console.WriteLine(res);
             #endregion
 
-            List<string> test = new List<string> { "hot", "dot", "dog", "lot", "log", "cog" };
-            var res = new WordLadderII().FindLadders2("hit", "cog", test);
+            //List<string> test = new List<string> { "hot", "dot", "dog", "lot", "log", "cog" };
+            //var res = new WordLadderII().FindLadders2("hit", "cog", test);
+
+            //["i"],[" "],["a"],["#"],["i"],[" "],["a"],["#"]]
+
+            string[] input = { "i love you", "island", "iroman", "i love leetcode" };
+            int[] num = { 5, 3, 2, 2 };
+            var aut = new AutocompleteSystem(input, num);
+            var r = aut.Input('i');
+
+            var b = aut.Input(' ');
+
+            var c = aut.Input('a');
+
+            var d = aut.Input('#');
+
+            var tt = aut.Input('i');
+
+            var bb = aut.Input(' ');
+
+            var cc = aut.Input('a');
+
+            var dd = aut.Input('#');
+
+            var rf = aut.Input('i');
+
+            var bbd = aut.Input(' ');
+
+            var cdc = aut.Input('a');
+
+            var ddd = aut.Input('#');
             Console.ReadLine();
         }
 
