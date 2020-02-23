@@ -12,7 +12,7 @@ namespace CodePractice.LeetCode
 
         public FileSystem()
         {
-            root = new Folder("/");
+            root = new Folder();
         }
 
         public IList<string> Ls(string path)
@@ -44,7 +44,7 @@ namespace CodePractice.LeetCode
             {
                 string name = list[i];
                 if (!current.subFolders.ContainsKey(name))
-                    current.subFolders.Add(name, new Folder(name));
+                    current.subFolders.Add(name, new Folder());
 
                 current = current.subFolders[name];
             }
@@ -59,10 +59,10 @@ namespace CodePractice.LeetCode
                 current = current.subFolders[list[i]];
             string fileName = list[list.Length - 1];
             if (!current.files.ContainsKey(fileName))
-                current.files.Add(fileName, new File(fileName, content));
+                current.files.Add(fileName, content);
             else
             {
-                current.files[fileName].content = current.files[fileName].content + content;
+                current.files[fileName] = current.files[fileName] + content;
             }
 
         }
@@ -75,7 +75,7 @@ namespace CodePractice.LeetCode
             for (int i = 0; i < list.Length - 1; i++)
                 current = current.subFolders[list[i]];
             string fileName = list[list.Length - 1];
-            return current.files[fileName].content;
+            return current.files[fileName];
 
         }
 
@@ -87,32 +87,18 @@ namespace CodePractice.LeetCode
             res.Sort();
             return res;
         }
-
-        public Folder GetLastFolder(string path)
-        {
-            char[] delimiter = { '/' };
-            string[] list = path.Split(delimiter);
-            Folder current = root;
-            for (int i = 0; i < list.Length - 1; i++)
-                current = current.subFolders[list[i]];
-            return current;
-        }
     }
 
     public class Folder
     {
-        public string name;
+        //public string name;
         //public List<Folder> subFolders; 
 
-        public Dictionary<string, Folder> subFolders;
-        public Dictionary<string, File> files;
+        public Dictionary<string, Folder> subFolders = new Dictionary<string, Folder>();
+        public Dictionary<string, string> files = new Dictionary<string, string>(); // store filename maps to fileContent
         //public List<File> files;
-        public Folder(string name)
-        {
-            this.name = name;
-            subFolders = new Dictionary<string, Folder>();
-            files = new Dictionary<string, File>();
-        }
+
+       // constructor is not needed
     }
 
     public class File
