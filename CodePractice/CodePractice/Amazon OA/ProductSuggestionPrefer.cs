@@ -25,7 +25,7 @@ namespace CodePractice
 
             foreach (char c in searchWord)
             {
-                root = root.Children[c - 'a'];
+                if(root != null) root = root.Children[c - 'a'];
                 if (root != null)
                 {
                     // not sorting the produdct array, but sort each suggestion array, and then take first three.

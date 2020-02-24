@@ -38,6 +38,35 @@ namespace CodePractice
             }
             return ans;
         }
+
+
+        //Brutal Force, what surprised me is 
+        public IList<IList<string>> SuggestedProducts(string[] products, string searchWord)
+        {
+            Array.Sort(products, StringComparer.Ordinal);
+            IList<IList<string>> result = new List<IList<string>>();
+            string keyword = "";
+            for (int i = 0; i < searchWord.Length; i++)
+            {
+                keyword += searchWord[i];
+                IList<string> current = new List<string>();
+                int count = 0;
+                foreach (string product in products)
+                {
+                    if (product.StartsWith(keyword, StringComparison.Ordinal))
+                    {
+                        current.Add(product);
+                        count++;
+                    }
+                    if (count == 3)
+                    {
+                        break;
+                    }
+                }
+                result.Add(current);
+            }
+            return result;
+        }
     }
 
     class Trie
