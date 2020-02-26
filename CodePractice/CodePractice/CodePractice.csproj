@@ -67,6 +67,7 @@
     <Compile Include="LeetCode\SerializeBinaryTree.cs" />
     <Compile Include="LeetCode\SlidingWindowSubstrings.cs" />
     <Compile Include="LeetCode\TreeTraversalStack.cs" />
+    <Compile Include="LeetCode\VisitPattern.cs" />
     <Compile Include="LeetCode\WordBreak.cs" />
     <Compile Include="LeetCode\WordSearch.cs" />
     <Compile Include="LongestCommonSequence.cs" />
