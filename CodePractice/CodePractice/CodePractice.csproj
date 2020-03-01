@@ -76,6 +76,7 @@
     <Compile Include="Amazon OA\NumberOfClusters.cs" />
     <Compile Include="Amazon OA\ProductSuggestionPrefer.cs" />
     <Compile Include="Amazon OA\ProductSuggetion.cs" />
+    <Compile Include="ObjectHeap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Flexera\RockPaperScissor.cs" />
