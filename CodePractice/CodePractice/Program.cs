@@ -162,5 +162,48 @@ namespace CodePractice
             return ans;
 
         }
+
+
+        public void Practice()
+        {
+
+
+            string s = "test";
+            string t = "test";
+            //256 array
+            int[] map = new int[256];
+            foreach (char c in t)
+                map[c - 'a']++;
+
+            int left = 0, right = 0, counter = t.Length;
+            while (right < s.Length)
+            {
+                //decrement the char
+                map[s[right] - 'a']--;
+                //means we have it before
+                if (map[s[right] - 'a'] > 0) ; counter--; // repeating char, val > 1;count++
+                right++;
+
+                while (counter == 0)
+                {
+                    map[s[left] - 'a']++;
+                    if (map[s[right] - 'a'] > 0) counter++;
+                    left++;
+
+                // do something,  == length or get min
+                }
+
+                // get max here
+
+            }
+
+
+            Stack<int> stack = new Stack<int>();
+            stack.Push(3);
+            stack.Pop();
+            stack.Peek();
+            //return res;
+
+        }
     }
 }
