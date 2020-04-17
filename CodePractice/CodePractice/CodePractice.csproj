@@ -86,6 +86,7 @@
     <Compile Include="Amazon Coding Problems\TwoSumAll.cs" />
     <Compile Include="Amazon Coding Problems\WordLadder.cs" />
     <Compile Include="SimpleHeap.cs" />
+    <Compile Include="SnniptPractice.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
