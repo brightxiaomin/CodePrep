@@ -101,6 +101,42 @@ namespace CodePractice
            
         }
 
+        public string SimplifyPath(string path)
+        {
+            string[] dirs = path.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            Stack<string> st = new Stack<string>();
+            foreach(string dir in dirs)
+            {
+                if (dir == ".")
+                    continue;
+                else if(dir == "..")
+                {
+                    if (st.Count > 0) st.Pop();
+                } 
+                else
+                {
+                    st.Push(dir);
+                }
+            }
+
+            //StringBuilder sb = new StringBuilder();
+            //while(st.Count > 0)
+            //{
+            //    sb.Insert(0, st.Pop());
+            //    sb.Insert(0, '/');
+            //}
+
+            //return sb.Length == 0 ? "/" : sb.ToString();
+
+            List<string> result = new List<string>();
+            while (st.Count > 0)
+            {
+                result.Insert(0, st.Pop());
+            }
+            return "/" + string.Join("/", result);
+
+        }
+
 
         //compare diag
         public void SearchMatrix(int[,] matrix, int target)
