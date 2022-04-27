@@ -96,6 +96,10 @@ namespace CodePractice
             //var ddd = aut.Input
             #endregion
 
+            string s = "rabbbit", t = "rabbit";
+
+            int ans = NumDistinct(s, t);
+
             Console.ReadLine();
           
            
@@ -137,6 +141,32 @@ namespace CodePractice
 
         }
 
+
+        public static int NumDistinct(string s, string t)
+        {
+            int m = s.Length, n = t.Length;
+
+
+            // dp[i][j] means distinct subsequence for s[0...i-1] and t[0...j-1]
+            int[][] dp = new int[m + 1][];
+            for (int i = 0; i <= m; i++)
+                dp[i] = new int[n + 1];
+
+            for (int i = 0; i <= m; i++)
+                dp[i][0] = 1; // empty string is a sub of any string
+
+            for (int i = 0; i < m; i++)
+                for (int j = 0; i < n; j++)
+                {
+                    if (s[i] == t[j])
+                        dp[i + 1][j + 1] = dp[i][j] + dp[i][j + 1]; // match on both or skip source
+                    else
+                        dp[i + 1][j + 1] = dp[i][j + 1];
+
+                }
+
+            return dp[m][n];
+        }
 
         //compare diag
         public void SearchMatrix(int[,] matrix, int target)
