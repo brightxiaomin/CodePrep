@@ -74,24 +74,40 @@ namespace CodePractice
         { 
             var result = new List<string>();
             // time or (time, isSign) boolean
-            Dictionary<string, int> map = new Dictionary<string, int>();
+            // Dictionary<string, int> map = new Dictionary<string, int>();
+            Dictionary<string, (int, bool)> map2 = new Dictionary<string, (int, bool)>();
             foreach(string log in logs)
             {
                 string[] items = log.Split(' ');
-                string id = items[0];
+                string userId = items[0];
                 int currentTime = int.Parse(items[1]);
-                string sign = items[2];
+                //string sign = items[2];
+                bool isSignIn = items[2] == "sign-in";
 
-                map.Add(id, currentTime);
-
-                int diff = Math.Abs(currentTime - map[id]);
-                if(diff <= max)
+                if(!map2.ContainsKey(userId))
                 {
-                    result.Add(id);
+                    map2.Add(userId, (currentTime, isSignIn));
+                }
+                else
+                {
+                    var val = map2[userId];
+                    if(val.Item2 && !isSignIn)
+                    {
+                        int diff = currentTime - val.Item1;
+                        map2[userId] = (diff, isSignIn);
+                    }
                 }
             }
 
+            foreach(var kvp in map2)
+            {
+                if(kvp.Value.Item1 <= max && !kvp.Value.Item2)
+                {
+                    result.Add(kvp.Key);
+                }
+            }
 
+            result.Sort();
 
             return result;
         }
